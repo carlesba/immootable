@@ -3,9 +3,9 @@ const {combine} = require('..')
 describe('combine', () => {
   it('returns a function', () => {
     const result = combine(
-       function a () {},
-       function b () {}
-      )
+      function a () {},
+      function b () {}
+    )
 
     expect(typeof result).toBe('function')
   })

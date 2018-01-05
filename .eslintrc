@@ -1,6 +1,10 @@
 {
-  "extends": "react-app",
-  "rules": {
-    "semi": [2, "never"]
+  "extends": "standard",
+  "rules": {},
+  "globals":{
+    "it": false,
+    "describe": false,
+    "expect": false,
+    "jest": false
   }
 }

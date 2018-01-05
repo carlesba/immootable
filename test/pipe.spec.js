@@ -3,9 +3,9 @@ const {pipe} = require('..')
 describe('pipe', () => {
   it('returns a function', () => {
     const result = pipe(
-       function a () {},
-       function b () {}
-      )
+      function a () {},
+      function b () {}
+    )
 
     expect(typeof result).toBe('function')
   })
