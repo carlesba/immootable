@@ -6,6 +6,7 @@ import get from './get'
 import has from './has'
 import keyPath from './key-path'
 import log from './log'
+import passBy from './pass-by'
 import pipe from './pipe'
 import reverse from './reverse'
 import set from './set'
@@ -20,6 +21,7 @@ export {
   has,
   keyPath,
   log,
+  passBy,
   pipe,
   reverse,
   set,

@@ -55,7 +55,7 @@ var defaultTo = function defaultTo(defValue, source) {
 var defaultTo$1 = curry(defaultTo);
 
 var has = function has(key, source) {
-  return source && source[key] !== undefined ? true : false;
+  return !!(source && source[key] !== undefined);
 };
 
 var has$1 = curry(has);
@@ -76,6 +76,13 @@ var log = function log(x) {
   console.log(x);
   return x;
 };
+
+var passBy = function passBy(by, pass) {
+  by(pass);
+  return pass;
+};
+
+var passBy$1 = curry(passBy);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -117,4 +124,4 @@ var update = function update(key, callback, source) {
 
 var update$1 = curry(update);
 
-export { apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, keyPath, log, pipe, reverse, set$1 as set, update$1 as update };
+export { apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, keyPath, log, passBy$1 as passBy, pipe, reverse, set$1 as set, update$1 as update };
