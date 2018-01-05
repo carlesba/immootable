@@ -14,6 +14,12 @@ var curry = function curry(callback) {
   return curried(callback, [], callback.length);
 };
 
+var append = function append(value, list) {
+  return list.concat(value);
+};
+
+var append$1 = curry(append);
+
 var apply = function apply(callback, args) {
   return callback.apply(undefined, args);
 };
@@ -72,6 +78,14 @@ var get = function get(key, source) {
 
 var get$1 = curry(get);
 
+function _toConsumableArray$2(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var insert = function insert(index, value, list) {
+  return [].concat(_toConsumableArray$2(list.slice(0, index)), [value], _toConsumableArray$2(list.slice(index, list.length)));
+};
+
+var insert$1 = curry(insert);
+
 var log = function log(parser, x) {
   console.log(parser ? parser(x) : x);
   return x;
@@ -85,6 +99,12 @@ var passBy = function passBy(by, pass) {
 };
 
 var passBy$1 = curry(passBy);
+
+var prepend = function prepend(value, list) {
+  return [value].concat(list);
+};
+
+var prepend$1 = curry(prepend);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -126,4 +146,4 @@ var update = function update(key, callback, source) {
 
 var update$1 = curry(update);
 
-export { apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, keyPath, log$1 as log, passBy$1 as passBy, pipe, reverse, set$1 as set, update$1 as update };
+export { append$1 as append, apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, insert$1 as insert, keyPath, log$1 as log, passBy$1 as passBy, prepend$1 as prepend, pipe, reverse, set$1 as set, update$1 as update };

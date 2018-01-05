@@ -96,6 +96,17 @@ defaulTo('foo', undefined) // 'foo'
 
 ### has
 
+### insert
+
+`index -> value -> list -> list`
+
+```
+import {insert} from 'immootable'
+
+const list = ['a', 'c']
+insert(1, 'b', list) // ['a', 'b', 'c']
+```
+
 ### log
 
 ### passBy
@@ -115,6 +126,17 @@ const getUserName = combine(
 ```
 
 ### pipe
+
+### prepend
+
+`value -> list -> list`
+
+```
+import {prepend} from 'immootable'
+const list = ['b', 'c']
+prepend('a', list) // ['a', 'b', 'c']
+```
+
 
 ### reverse
 
