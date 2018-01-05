@@ -1,6 +1,6 @@
 {
   "name": "immootable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/immootable.cjs.js",
   "module": "dist/immootable.esm.js",
   "browser": "dist/immootable.umd.js",
