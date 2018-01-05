@@ -7,7 +7,7 @@ Update your data
 ### apply
 
 ```
-import {apply} from 'imootable'
+import {apply} from 'immootable'
 
 const add = (a, b) => a + b
 apply(add, [1, 2]) // 3
@@ -16,7 +16,7 @@ apply(add, [1, 2]) // 3
 ### combine
 
 ```
-import {combine} from 'imootable'
+import {combine} from 'immootable'
 
 const add1 = val => val + 1
 const divide2 = val => val/2
@@ -31,21 +31,21 @@ Allow currying values for a given function
 `function -> function`
 
 ```
-import {curry} from 'imootable'
+import {curry} from 'immootable'
 
 const add = curry((a, b) => a + b)
 const add1 = add(1)
 add1(3) // 4
 ```
 
-### defaulTo
+### defaultTo
 
 Returns default value when target value is falsy
 
 `defaultValue -> targetValue -> output`
 
 ```
-import {defaultTo} from 'imootable'
+import {defaultTo} from 'immootable'
 
 defaulTo('foo', 1) // 1
 defaulTo('foo', 0) // 'foo'
@@ -57,9 +57,23 @@ defaulTo('foo', undefined) // 'foo'
 
 ### has
 
-### keyPath
-
 ### log
+
+### passBy
+
+Allows you to introduce side effects in a pipe.
+
+` function -> value -> value`
+
+```
+import {passBy} from 'immootable'
+
+const getUserName = combine(
+  getName,
+  passBy(console.log), // will log the output of getUser and return it
+  getUser
+)
+```
 
 ### pipe
 
