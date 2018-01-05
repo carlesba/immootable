@@ -1,4 +1,4 @@
-const {curry} = require('../dist')
+const {curry} = require('..')
 
 describe('curry', () => {
   it('arity 1', () => {

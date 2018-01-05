@@ -1,4 +1,4 @@
-const {update} = require('../dist')
+const {update} = require('..')
 
 describe('update', () => {
   it('creates new object setting the value with the updater function', () => {

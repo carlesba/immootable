@@ -1,4 +1,4 @@
-const {defaultTo} = require('../dist')
+const {defaultTo} = require('..')
 
 describe('defaultTo', () => {
   it('returns the default value when value is falsy', () => {

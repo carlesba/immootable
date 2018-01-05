@@ -1,4 +1,4 @@
-const {pipe} = require('../dist')
+const {pipe} = require('..')
 
 describe('pipe', () => {
   it('returns a function', () => {

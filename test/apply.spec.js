@@ -1,4 +1,4 @@
-const {apply} = require('../dist')
+const {apply} = require('..')
 
 describe('apply', () => {
   it('calls function with list of arguments', () => {

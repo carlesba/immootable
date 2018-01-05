@@ -1,7 +1,9 @@
 {
-  "name": "foo",
+  "name": "immutable-tools",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/immutable-tools.cjs.js",
+  "module": "dist/immutable-tools.esm.js",
+  "browser": "dist/immutable-tools.umd.js",
   "dependencies": {},
   "scripts": {
     "start": "",
@@ -11,9 +13,12 @@
     "dev": "rollup -c -w"
   },
   "devDependencies": {
-    "buble": "^0.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "jest": "^22.0.4",
     "rollup": "^0.53.3",
-    "rollup-plugin-buble": "^0.18.0"
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0"
   }
 }

@@ -1,4 +1,4 @@
-const {combine} = require('../dist')
+const {combine} = require('..')
 
 describe('combine', () => {
   it('returns a function', () => {

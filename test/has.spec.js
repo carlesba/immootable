@@ -1,4 +1,4 @@
-const {has} = require('../dist')
+const {has} = require('..')
 
 describe('has', () => {
   it('returns true when the value is not undefined', () => {

@@ -1,4 +1,4 @@
-const {get} = require('../dist')
+const {get} = require('..')
 
 describe('get', () => {
   it('returns value of an object given a valid path', () => {

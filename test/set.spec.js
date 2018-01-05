@@ -1,4 +1,4 @@
-const {set} = require('../dist')
+const {set} = require('..')
 
 describe('set', () => {
   it('creates new object with value updated', () => {
