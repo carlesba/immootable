@@ -1,9 +1,9 @@
 {
-  "name": "immutable-tools",
+  "name": "immootable",
   "version": "0.1.0",
-  "main": "dist/immutable-tools.cjs.js",
-  "module": "dist/immutable-tools.esm.js",
-  "browser": "dist/immutable-tools.umd.js",
+  "main": "dist/immootable.cjs.js",
+  "module": "dist/immootable.esm.js",
+  "browser": "dist/immootable.umd.js",
   "dependencies": {},
   "scripts": {
     "start": "",
