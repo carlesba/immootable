@@ -12,7 +12,7 @@
     "test:watch": "jest --watch",
     "dev": "rollup -c -w",
     "lint": "eslint -f codeframe --color src test",
-    "precommit": "npm run lint && npm run test"
+    "precommit": "npm run build && npm run lint && npm run test"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",

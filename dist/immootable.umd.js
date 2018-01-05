@@ -78,10 +78,12 @@ var get = function get(key, source) {
 
 var get$1 = curry(get);
 
-var log = function log(x) {
-  console.log(x);
+var log = function log(parser, x) {
+  console.log(parser ? parser(x) : x);
   return x;
 };
+
+var log$1 = curry(log);
 
 var passBy = function passBy(by, pass) {
   by(pass);
@@ -137,7 +139,7 @@ exports.defaultTo = defaultTo$1;
 exports.get = get$1;
 exports.has = has$1;
 exports.keyPath = keyPath;
-exports.log = log;
+exports.log = log$1;
 exports.passBy = passBy$1;
 exports.pipe = pipe;
 exports.reverse = reverse;

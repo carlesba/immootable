@@ -72,10 +72,12 @@ var get = function get(key, source) {
 
 var get$1 = curry(get);
 
-var log = function log(x) {
-  console.log(x);
+var log = function log(parser, x) {
+  console.log(parser ? parser(x) : x);
   return x;
 };
+
+var log$1 = curry(log);
 
 var passBy = function passBy(by, pass) {
   by(pass);
@@ -124,4 +126,4 @@ var update = function update(key, callback, source) {
 
 var update$1 = curry(update);
 
-export { apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, keyPath, log, passBy$1 as passBy, pipe, reverse, set$1 as set, update$1 as update };
+export { apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, keyPath, log$1 as log, passBy$1 as passBy, pipe, reverse, set$1 as set, update$1 as update };

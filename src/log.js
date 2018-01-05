@@ -1,6 +1,8 @@
-const log = x => {
-  console.log(x)
+import curry from './curry'
+
+const log = (parser, x) => {
+  console.log(parser ? parser(x) : x)
   return x
 }
 
-export default log
+export default curry(log)
