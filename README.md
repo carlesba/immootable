@@ -1,8 +1,47 @@
 # Immootable
 
-Update your data
+```js
+/**
+ * Example
+ */
+// import createReducer from '../create-reducer'
+import {append, combine, get, set} from 'immootable'
+
+// user -> id
+const getUserId = get(['user', 'id'])
+// user -> state -> state
+const addUserToState = set(['users', getUserId(user)])
+// user -> state -> state
+const addUserIdToList = user => update(
+  'list',
+  // list -> list
+  pipe(append, getUserId(user))
+)
+
+const actions = {
+  ADD_USER: (state, {payload: { user }}) => {
+    const action = combine(
+      addUserIdToList(user),
+      addUserToState(user)
+    )
+    return action(state)
+  }
+}
+
+export default createReducer(actions, {list: [], users: {}})
+```
 
 ## API
+
+### append
+
+```
+import {append} from 'immootable'
+
+const input = ['a', 'b']
+const appendC = append('c')
+appendC(input) // ['a', 'b', 'c']
+```
 
 ### apply
 
