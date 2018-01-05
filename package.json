@@ -2,18 +2,18 @@
   "name": "foo",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "lodash": "^4.17.4",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-motion": "^0.5.2",
-    "react-scripts": "1.0.17",
-    "styled-components": "^2.3.3"
-  },
+  "dependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "",
+    "build": "rollup -c",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "dev": "rollup -c -w"
+  },
+  "devDependencies": {
+    "buble": "^0.18.0",
+    "jest": "^22.0.4",
+    "rollup": "^0.53.3",
+    "rollup-plugin-buble": "^0.18.0"
   }
 }

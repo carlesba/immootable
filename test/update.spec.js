@@ -1,4 +1,4 @@
-import update from './update'
+const {update} = require('../dist')
 
 describe('update', () => {
   it('creates new object setting the value with the updater function', () => {

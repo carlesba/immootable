@@ -1,4 +1,4 @@
-import set from './set'
+const {set} = require('../dist')
 
 describe('set', () => {
   it('creates new object with value updated', () => {

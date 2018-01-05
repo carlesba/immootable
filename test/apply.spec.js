@@ -1,4 +1,4 @@
-import apply from './apply'
+const {apply} = require('../dist')
 
 describe('apply', () => {
   it('calls function with list of arguments', () => {

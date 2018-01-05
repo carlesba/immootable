@@ -1,4 +1,4 @@
-import curry from './curry'
+const {curry} = require('../dist')
 
 describe('curry', () => {
   it('arity 1', () => {

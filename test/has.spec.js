@@ -1,4 +1,4 @@
-import has from './has'
+const {has} = require('../dist')
 
 describe('has', () => {
   it('returns true when the value is not undefined', () => {

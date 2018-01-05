@@ -1,4 +1,4 @@
-import get from './get'
+const {get} = require('../dist')
 
 describe('get', () => {
   it('returns value of an object given a valid path', () => {

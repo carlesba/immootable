@@ -1,4 +1,4 @@
-import reverse from './reverse'
+const {reverse} = require('../dist')
 
 describe('reverse', () => {
   it('returns a new array reversed', () => {

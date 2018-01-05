@@ -1,4 +1,4 @@
-import defaultTo from './default-to'
+const {defaultTo} = require('../dist')
 
 describe('defaultTo', () => {
   it('returns the default value when value is falsy', () => {
