@@ -109,6 +109,21 @@ insert(1, 'b', list) // ['a', 'b', 'c']
 
 ### log
 
+### omit
+
+`(key|Array<key>) -> (Object|Array) -> (Object|Array)`
+
+```
+import {omit} from 'immootable'
+// with arrays
+const cutthroat = omit(0)
+cutthroat(['a', 'b', 'c']) // ['b', 'c']
+
+// with objects
+const anonymous = omit(['name', 'id'])
+anonymous({ name: 'moo', id: 42, foo: true }) // { foo: true }
+```
+
 ### passBy
 
 Allows you to introduce side effects in a pipe.

@@ -93,6 +93,25 @@ var log = function log(parser, x) {
 
 var log$1 = curry(log);
 
+var omitList = function omitList(k, s) {
+  return s.filter(function (_, i) {
+    return k.indexOf(i) < 0;
+  });
+};
+
+var omitObject = function omitObject(keys, s) {
+  return keys.reduce(function (o, k) {
+    delete o[k];
+    return o;
+  }, Object.assign({}, s));
+};
+
+var omit = function omit(keys, source) {
+  return Array.isArray(source) ? omitList(keyPath(keys), source) : omitObject(keyPath(keys), source);
+};
+
+var omit$1 = curry(omit);
+
 var passBy = function passBy(by, pass) {
   by(pass);
   return pass;
@@ -146,4 +165,4 @@ var update = function update(key, callback, source) {
 
 var update$1 = curry(update);
 
-export { append$1 as append, apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, insert$1 as insert, keyPath, log$1 as log, passBy$1 as passBy, prepend$1 as prepend, pipe, reverse, set$1 as set, update$1 as update };
+export { append$1 as append, apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, insert$1 as insert, keyPath, log$1 as log, omit$1 as omit, passBy$1 as passBy, prepend$1 as prepend, pipe, reverse, set$1 as set, update$1 as update };

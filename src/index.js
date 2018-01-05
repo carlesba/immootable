@@ -8,6 +8,7 @@ import has from './has'
 import insert from './insert'
 import keyPath from './key-path'
 import log from './log'
+import omit from './omit'
 import passBy from './pass-by'
 import pipe from './pipe'
 import prepend from './prepend'
@@ -26,6 +27,7 @@ export {
   insert,
   keyPath,
   log,
+  omit,
   passBy,
   prepend,
   pipe,
