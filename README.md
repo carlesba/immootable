@@ -94,7 +94,33 @@ defaulTo('foo', undefined) // 'foo'
 
 ### get
 
+Returns the value of an Object|Array given a `path` or a key|index
+
+`key|index|Array<key> -> Object|Array -> any`
+
+```
+import {get} from 'immootable'
+
+get(0, ['a', 'b']) // 'a'
+get([0, 1], [['a', 'b'], 'c']) // 'b'
+get(['a', 'b'], { a: { b: 'foo' } } ) // 'foo'
+get(['a', 'b'], { aa: { bb: 3 } } ) // undefined
+```
+
 ### has
+
+Checks if the value pointed by a path is not undefined
+
+`key|index|Array<key> -> Object -> Boolean`
+
+```
+import {has} from 'immootable'
+
+has(['a', 'b'], { a: { b: 'foo' } } ) // true
+has(['aa', 'b'], { a: { b: 'foo' } } ) // false
+const named = has('name')
+named({name: 'f', age: 1}) // true
+```
 
 ### insert
 
@@ -108,6 +134,26 @@ insert(1, 'b', list) // ['a', 'b', 'c']
 ```
 
 ### log
+
+Logs the second argument and returns it
+
+`Function -> any -> any`
+
+```
+import {log} from 'immootable'
+const parser = x => `count: ${x}`
+const logCount = log(parser)
+
+const add4 = pipe(
+  add1,
+  add1,
+  log,
+  add1,
+  add1
+)
+add4(0) // 4
+// count: 2
+```
 
 ### omit
 
@@ -142,6 +188,15 @@ const getUserName = combine(
 
 ### pipe
 
+```
+import {pipe} from 'immootable'
+const getUserId = pipe(
+  getUser,
+  getId
+)
+getUserId({ user: { id: 'id' } }) // 'id
+```
+
 ### prepend
 
 `value -> list -> list`
@@ -155,9 +210,42 @@ prepend('a', list) // ['a', 'b', 'c']
 
 ### reverse
 
+```
+import {reverse} from 'immootable'
+const list = ['b', 'c']
+reverse(list) // ['c', 'b']
+```
+
 ### set
 
+```
+import {set} from 'immootable'
+
+const setNick = set('nick')
+const input = {repos: [], nick: ''}
+const output = setNick('moo', input) // {repos: [], nick: 'moo'}
+ouput.repos === input.repos // true
+output === input // false
+
+const house = {door: { isOpen: true } }
+const closeDoor = set(['door', 'isOpen'], false)
+closeDoor(house) // {door: { isOpen: false } }
+
+```
+
 ### update
+
+```
+import {update} from 'immootable'
+
+const switchDoor = update(
+  ['door', 'isOpen],
+  (isOpen) => !isOpen
+)
+const house = {door: { isOpen: true } }
+switchDoor(hosue) // {door: { isOpen: false } }
+
+```
 
 ## Composable functions
 
