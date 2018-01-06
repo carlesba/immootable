@@ -1,6 +1,6 @@
 {
   "name": "immootable",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "main": "dist/immootable.cjs.js",
   "module": "dist/immootable.esm.js",
   "browser": "dist/immootable.umd.js",
@@ -18,7 +18,7 @@
     "lint": "eslint -f codeframe --color src test",
     "precommit": "npm run build && npm run lint && npm run test"
   },
-  "license" : "MIT",
+  "license": "MIT",
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
