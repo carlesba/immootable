@@ -60,6 +60,18 @@ var defaultTo = function defaultTo(defValue, source) {
 
 var defaultTo$1 = curry(defaultTo);
 
+var filter = function filter(callback, list) {
+  return list.filter(callback);
+};
+
+var filter$1 = curry(filter);
+
+var find = function find(callback, list) {
+  return list.find(callback);
+};
+
+var find$1 = curry(find);
+
 var has = function has(key, source) {
   return !!(source && source[key] !== undefined);
 };
@@ -92,6 +104,12 @@ var log = function log(parser, x) {
 };
 
 var log$1 = curry(log);
+
+var map = function map(callback, list) {
+  return list.map(callback);
+};
+
+var map$1 = curry(map);
 
 var omitList = function omitList(k, s) {
   return s.filter(function (_, i) {
@@ -165,4 +183,4 @@ var update = function update(key, callback, source) {
 
 var update$1 = curry(update);
 
-export { append$1 as append, apply$1 as apply, combine, curry, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, insert$1 as insert, keyPath, log$1 as log, omit$1 as omit, passBy$1 as passBy, prepend$1 as prepend, pipe, reverse, set$1 as set, update$1 as update };
+export { append$1 as append, apply$1 as apply, combine, curry, filter$1 as filter, find$1 as find, defaultTo$1 as defaultTo, get$1 as get, has$1 as has, insert$1 as insert, keyPath, log$1 as log, map$1 as map, omit$1 as omit, passBy$1 as passBy, prepend$1 as prepend, pipe, reverse, set$1 as set, update$1 as update };

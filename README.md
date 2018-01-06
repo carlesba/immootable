@@ -239,7 +239,7 @@ closeDoor(house) // {door: { isOpen: false } }
 import {update} from 'immootable'
 
 const switchDoor = update(
-  ['door', 'isOpen],
+  ['door', 'isOpen'],
   (isOpen) => !isOpen
 )
 const house = {door: { isOpen: true } }
@@ -249,4 +249,5 @@ switchDoor(hosue) // {door: { isOpen: false } }
 
 ## Composable functions
 
-Every method exposed allow curry (except `curry`, `pipe` and `combine`)
+Every method exposed allows currying their arguments*.
+*(except `curry`, `pipe` and `combine`)
