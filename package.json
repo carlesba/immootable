@@ -10,16 +10,28 @@
   },
   "dependencies": {},
   "scripts": {
-    "start": "",
+    "start": "rollup -c -w",
     "build": "rollup -c",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "dev": "rollup -c -w",
+    "dev": "jest --watch",
     "lint": "eslint -f codeframe --color src test",
     "precommit": "npm run build && npm run lint && npm run test"
   },
+  "authors": [
+    "Carles Ballester <carlesba.js@gmail.com> (https://github.com/carlesba)"
+  ],
   "license": "MIT",
+  "keywords": [
+    "immutable",
+    "functional",
+    "json",
+    "data",
+    "state",
+    "react",
+    "redux"
+  ],
   "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.14.0",
