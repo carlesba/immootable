@@ -10,7 +10,7 @@ import {append, combine, get, set} from 'immootable'
 // user -> id
 const getUserId = get(['user', 'id'])
 // user -> state -> state
-const addUserToState = set(['users', getUserId(user)])
+const addUserToState = user => set(['users', getUserId(user)])
 // user -> state -> state
 const addUserIdToList = user => update(
   'list',
@@ -35,7 +35,7 @@ export default createReducer(actions, {list: [], users: {}})
 
 ### append
 
-```
+```js
 import {append} from 'immootable'
 
 const input = ['a', 'b']
@@ -45,7 +45,7 @@ appendC(input) // ['a', 'b', 'c']
 
 ### apply
 
-```
+```js
 import {apply} from 'immootable'
 
 const add = (a, b) => a + b
@@ -54,7 +54,7 @@ apply(add, [1, 2]) // 3
 
 ### combine
 
-```
+```js
 import {combine} from 'immootable'
 
 const add1 = val => val + 1
@@ -69,7 +69,7 @@ Allow currying values for a given function
 
 `function -> function`
 
-```
+```js
 import {curry} from 'immootable'
 
 const add = curry((a, b) => a + b)
@@ -83,7 +83,7 @@ Returns default value when target value is falsy
 
 `defaultValue -> targetValue -> output`
 
-```
+```js
 import {defaultTo} from 'immootable'
 
 defaulTo('foo', 1) // 1
@@ -98,7 +98,7 @@ Returns the value of an Object|Array given a `path` or a key|index
 
 `key|index|Array<key> -> Object|Array -> any`
 
-```
+```js
 import {get} from 'immootable'
 
 get(0, ['a', 'b']) // 'a'
@@ -113,7 +113,7 @@ Checks if the value pointed by a path is not undefined
 
 `key|index|Array<key> -> Object -> Boolean`
 
-```
+```js
 import {has} from 'immootable'
 
 has(['a', 'b'], { a: { b: 'foo' } } ) // true
@@ -126,7 +126,7 @@ named({name: 'f', age: 1}) // true
 
 `index -> value -> list -> list`
 
-```
+```js
 import {insert} from 'immootable'
 
 const list = ['a', 'c']
@@ -139,7 +139,7 @@ Logs the second argument and returns it
 
 `Function -> any -> any`
 
-```
+```js
 import {log} from 'immootable'
 const parser = x => `count: ${x}`
 const logCount = log(parser)
@@ -159,7 +159,7 @@ add4(0) // 4
 
 `(key|Array<key>) -> (Object|Array) -> (Object|Array)`
 
-```
+```js
 import {omit} from 'immootable'
 // with arrays
 const cutthroat = omit(0)
@@ -176,7 +176,7 @@ Allows you to introduce side effects in a pipe.
 
 ` function -> value -> value`
 
-```
+```js
 import {passBy} from 'immootable'
 
 const getUserName = combine(
@@ -188,7 +188,7 @@ const getUserName = combine(
 
 ### pipe
 
-```
+```js
 import {pipe} from 'immootable'
 const getUserId = pipe(
   getUser,
@@ -201,7 +201,7 @@ getUserId({ user: { id: 'id' } }) // 'id
 
 `value -> list -> list`
 
-```
+```js
 import {prepend} from 'immootable'
 const list = ['b', 'c']
 prepend('a', list) // ['a', 'b', 'c']
@@ -210,7 +210,7 @@ prepend('a', list) // ['a', 'b', 'c']
 
 ### reverse
 
-```
+```js
 import {reverse} from 'immootable'
 const list = ['b', 'c']
 reverse(list) // ['c', 'b']
@@ -218,7 +218,7 @@ reverse(list) // ['c', 'b']
 
 ### set
 
-```
+```js
 import {set} from 'immootable'
 
 const setNick = set('nick')
@@ -235,7 +235,7 @@ closeDoor(house) // {door: { isOpen: false } }
 
 ### update
 
-```
+```js
 import {update} from 'immootable'
 
 const switchDoor = update(
