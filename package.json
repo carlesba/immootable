@@ -4,6 +4,10 @@
   "main": "dist/immootable.cjs.js",
   "module": "dist/immootable.esm.js",
   "browser": "dist/immootable.umd.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlesba/immootable"
+  },
   "dependencies": {},
   "scripts": {
     "start": "",
