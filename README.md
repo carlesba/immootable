@@ -141,13 +141,12 @@ Logs the second argument and returns it
 
 ```js
 import {log} from 'immootable'
-const parser = x => `count: ${x}`
-const logCount = log(parser)
 
 const add4 = pipe(
   add1,
   add1,
-  log,
+  logCount,
+  log(x => `count: ${x}`),
   add1,
   add1
 )
@@ -161,6 +160,7 @@ add4(0) // 4
 
 ```js
 import {omit} from 'immootable'
+
 // with arrays
 const cutthroat = omit(0)
 cutthroat(['a', 'b', 'c']) // ['b', 'c']
