@@ -1,25 +1,25 @@
-import append from './append'
-import apply from './apply'
-import combine from './combine'
-import curry from './curry'
-import defaultTo from './default-to'
-import filter from './filter'
-import find from './find'
-import get from './get'
-import has from './has'
-import insert from './insert'
-import keyPath from './key-path'
-import log from './log'
-import map from './map'
-import omit from './omit'
-import passBy from './pass-by'
-import pipe from './pipe'
-import prepend from './prepend'
-import reverse from './reverse'
-import set from './set'
-import update from './update'
+const append = require('./append')
+const apply = require('./apply')
+const combine = require('./combine')
+const curry = require('./curry')
+const defaultTo = require('./default-to')
+const filter = require('./filter')
+const find = require('./find')
+const get = require('./get')
+const has = require('./has')
+const insert = require('./insert')
+const keyPath = require('./key-path')
+const log = require('./log')
+const map = require('./map')
+const omit = require('./omit')
+const passBy = require('./pass-by')
+const pipe = require('./pipe')
+const prepend = require('./prepend')
+const reverse = require('./reverse')
+const set = require('./set')
+const update = require('./update')
 
-export {
+module.exports = {
   append,
   apply,
   combine,

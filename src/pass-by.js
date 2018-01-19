@@ -1,8 +1,8 @@
-import curry from './curry'
+const curry = require('./curry')
 
 const passBy = (by, pass) => {
   by(pass)
   return pass
 }
 
-export default curry(passBy)
+module.exports = curry(passBy)

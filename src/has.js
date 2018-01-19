@@ -1,5 +1,5 @@
-import curry from './curry'
+const curry = require('./curry')
 
 const has = (key, source) => !!(source && source[key] !== undefined)
 
-export default curry(has)
+module.exports = curry(has)

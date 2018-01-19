@@ -1,4 +1,4 @@
-import curry from './curry'
+const curry = require('./curry')
 
 const insert = (index, value, list) => [
   ...list.slice(0, index),
@@ -6,4 +6,4 @@ const insert = (index, value, list) => [
   ...list.slice(index, list.length)
 ]
 
-export default curry(insert)
+module.exports = curry(insert)

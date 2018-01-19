@@ -1,5 +1,5 @@
-import curry from './curry'
+const curry = require('./curry')
 
 const map = (callback, list) => list.map(callback)
 
-export default curry(map)
+module.exports = curry(map)

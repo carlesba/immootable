@@ -5,4 +5,4 @@ const curried = (callback, args, arity) => arity === 0
 
 const curry = callback => curried(callback, [], callback.length)
 
-export default curry
+module.exports = curry

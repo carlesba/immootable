@@ -1,6 +1,6 @@
-import curry from './curry'
-import get from './get'
-import keyPath from './key-path'
+const curry = require('./curry')
+const get = require('./get')
+const keyPath = require('./key-path')
 
 const _set = (key, value, source) => Array.isArray(source)
   ? source.map((v, i) => i === key ? value : v)
@@ -15,4 +15,4 @@ const set = (key, value, source) => {
   return _set(nextKey, nextValue, source)
 }
 
-export default curry(set)
+module.exports = curry(set)

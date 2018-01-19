@@ -1,5 +1,5 @@
-import curry from './curry'
+const curry = require('./curry')
 
 const prepend = (value, list) => [value].concat(list)
 
-export default curry(prepend)
+module.exports = curry(prepend)

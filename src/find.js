@@ -1,5 +1,5 @@
-import curry from './curry'
+const curry = require('./curry')
 
 const find = (callback, list) => list.find(callback)
 
-export default curry(find)
+module.exports = curry(find)

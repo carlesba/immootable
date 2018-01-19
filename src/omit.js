@@ -1,5 +1,5 @@
-import curry from './curry'
-import keyPath from './key-path'
+const curry = require('./curry')
+const keyPath = require('./key-path')
 
 const omitList = (k, s) => s.filter(
   (_, i) => k.indexOf(i) < 0
@@ -17,4 +17,4 @@ const omit = (keys, source) => Array.isArray(source)
   ? omitList(keyPath(keys), source)
   : omitObject(keyPath(keys), source)
 
-export default curry(omit)
+module.exports = curry(omit)

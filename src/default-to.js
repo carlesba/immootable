@@ -1,5 +1,5 @@
-import curry from './curry'
+const curry = require('./curry')
 
 const defaultTo = (defValue, source) => source || defValue
 
-export default curry(defaultTo)
+module.exports = curry(defaultTo)

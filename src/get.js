@@ -1,10 +1,10 @@
-import curry from './curry'
-import has from './has'
-import keyPath from './key-path'
+const curry = require('./curry')
+const has = require('./has')
+const keyPath = require('./key-path')
 
 const get = (key, source) => keyPath(key).reduce(
   (value, key) => has(key, value) ? value[key] : undefined,
   source
 )
 
-export default curry(get)
+module.exports = curry(get)

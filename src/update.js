@@ -1,6 +1,6 @@
-import curry from './curry'
-import keyPath from './key-path'
-import set from './set'
+const curry = require('./curry')
+const keyPath = require('./key-path')
+const set = require('./set')
 
 const update = (key, callback, source) => {
   const keys = keyPath(key)
@@ -11,4 +11,4 @@ const update = (key, callback, source) => {
   return set(nextKey, value, source)
 }
 
-export default curry(update)
+module.exports = curry(update)
